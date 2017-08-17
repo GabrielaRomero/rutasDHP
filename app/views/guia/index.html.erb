@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Guia</h1>
+
+<table bgcolor="red">
+  <thead>
+    <tr>
+      <th>Folio</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Fecha nacimiento</th>
+      <th>Disponible</th>
+      <th>Telefono</th>
+      <th>Correo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guia.each do |guium| %>
+      <tr>
+        <td><%= guium.folio %></td>
+        <td><%= guium.nombre %></td>
+        <td><%= guium.apellidos %></td>
+        <td><%= guium.fecha_nacimiento %></td>
+        <td><%= guium.disponible %></td>
+        <td><%= guium.telefono %></td>
+        <td><%= guium.correo %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

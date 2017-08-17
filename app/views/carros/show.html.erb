@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Tu Carro</h2> 
+<table> 
+<% @carro.line_items.each do |item| %>
+<tr> 
+<td><%= item.quantity %>&times;</td> 
+<td><%= item.reserva.Nombre %></td> 
+<td class="item_price"><%= number_to_currency(item.total_precio) %></td> 
+</tr> 
+<% end %>
+<tr class="total_line"> 
+<td colspan="2">Total</td> 
+<td class="total_cell"><%= number_to_currency(@carro.total_precio) %></td> 
+</tr> 
+</table> 
+<table>
+	<tr>
+<td><%= button_to 'Vaciar Carro', @carro, method: :delete, data: { confirm: '¿Estas Seguro?' } %></td> 
+<td><%= button_to "Confirmar Orden", new_order_path, method: :get %></td> 
+	</tr>
+</table>

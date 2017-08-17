@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<h1>Area de Reserva de Boletos</h1>
+
+<% cache @reservas do %>
+<% @reservas.each do |reserva| %>
+<% cache reserva do %>
+
+
+<div class="entry">
+<%= image_tag(reserva.image_url) %>
+<h3><%= reserva.Nombre %></h3>
+<%= sanitize(reserva.descripcion) %>
+<div class="price_line">
+<span class="price"><%= number_to_currency(reserva.precio) %></span>
+<%= button_to 'Añadir al carro de compra', line_items_path(reserva_id: reserva) %>
+</div>
+</div>
+<% end %>
+<% end %>
+<% end %>

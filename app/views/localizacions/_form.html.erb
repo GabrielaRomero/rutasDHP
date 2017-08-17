@@ -1,0 +1,42 @@
+<%= form_with(model: localizacion, local: true) do |form| %>
+  <% if localizacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(localizacion.errors.count, "error") %> prohibited this localizacion from being saved:</h2>
+
+      <ul>
+      <% localizacion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :latitud %>
+    <%= form.text_field :latitud, id: :localizacion_latitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitud %>
+    <%= form.text_field :longitud, id: :localizacion_longitud %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :localizacion_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :localizacion_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :localizacion_titulo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

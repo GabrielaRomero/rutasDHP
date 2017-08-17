@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservas</h1>
+
+<table>
+  <% @reservas.each do |reserva| %>
+  
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td>
+<%= image_tag(reserva.image_url, class: 'list_image') %>
+</td>
+<td class="list_description">
+<dl>
+<dt><%= reserva.Nombre %></dt>
+<dd><%= truncate(strip_tags(reserva.descripcion),
+length: 80) %></dd>
+</dl>
+</td>
+<td class="list_actions">
+<%= link_to 'Mostrar', reserva %><br/>
+<%= link_to 'Editar', edit_reserva_path(reserva) %><br/>
+
+<%= link_to 'Destruir', reserva, method: :delete,
+data: { confirm: 'Estas Seguro?' } %>
+</td>
+</tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'Nueva Reserva', new_reserva_path %>
+

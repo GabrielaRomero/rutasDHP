@@ -1,0 +1,32 @@
+<%= form_for(pedido) do |f| %>
+<% if pedido.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(pedido.errors.count, "error") %>
+prohibited this pedido from being saved:</h2>
+<ul>
+<% pedido.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<div class="field">
+<%= f.label :nombre%>
+<%= f.text_field :nombre, size: 40 %> 
+</div>
+<div class="field">
+<%= f.label :direccion %>
+<%= f.text_area :direccion, rows: 3, cols: 40 %> 
+</div>
+<div class="field">
+<%= f.label :email %>
+<%= f.email_field :email, size: 40 %> 
+</div>
+<div class="field">
+<%= f.label :tipo_de_pago %>
+<%= f.select :tipo_de_pago, Pedido.tipo_de_pagos.keys, prompt: 'Selcciona un metodo de pago' %> ➤
+</div>
+<div class="actions">
+<%= f.submit 'Confirmar orden' %> ➤
+</div>
+<% end %>

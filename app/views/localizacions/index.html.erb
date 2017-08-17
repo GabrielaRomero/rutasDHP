@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Localizacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Direccion</th>
+      <th>Descripcion</th>
+      <th>Titulo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @localizacions.each do |localizacion| %>
+      <tr>
+        <td><%= localizacion.latitud %></td>
+        <td><%= localizacion.longitud %></td>
+        <td><%= localizacion.direccion %></td>
+        <td><%= localizacion.descripcion %></td>
+        <td><%= localizacion.titulo %></td>
+        <td><%= link_to 'Show', localizacion %></td>
+        <td><%= link_to 'Edit', edit_localizacion_path(localizacion) %></td>
+        <td><%= link_to 'Destroy', localizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div style="width: 800px;" > 
+  <dir id="map" style="width: 800px; heigth:400px;"></dir>
+</div>
+
+<br>
+
+<%= link_to 'New Localizacion', new_localizacion_path %>

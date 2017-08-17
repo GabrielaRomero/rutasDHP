@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Folio:</strong>
+  <%= @guium.folio %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @guium.nombre %>
+</p>
+
+<p>
+  <strong>Apellidos:</strong>
+  <%= @guium.apellidos %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @guium.fecha_nacimiento %>
+</p>
+
+<p>
+  <strong>Disponible:</strong>
+  <%= @guium.disponible %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @guium.telefono %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @guium.correo %>
+</p>
+
+<%= link_to 'Edit', edit_guium_path(@guium) %> |
+<%= link_to 'Back', guia_path %>

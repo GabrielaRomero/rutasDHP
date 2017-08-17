@@ -1,0 +1,52 @@
+<%= form_with(model: guium, local: true) do |form| %>
+  <% if guium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guium.errors.count, "error") %> prohibited this guium from being saved:</h2>
+
+      <ul>
+      <% guium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :folio %>
+    <%= form.text_field :folio, id: :guium_folio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :guium_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellidos %>
+    <%= form.text_field :apellidos, id: :guium_apellidos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_nacimiento %>
+    <%= form.date_select :fecha_nacimiento, id: :guium_fecha_nacimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disponible %>
+    <%= form.check_box :disponible, id: :guium_disponible %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, id: :guium_telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correo %>
+    <%= form.text_field :correo, id: :guium_correo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
